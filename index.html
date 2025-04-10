@@ -1,4 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- truncated to save space in this message -->
-</html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>West Michigan Events</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+    header {
+      background-color: #3db2ff;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    header img {
+      max-width: 150px;
+      margin-bottom: 0.5rem;
+    }
+    .slogan {
+      font-style: italic;
+      font-size: 1.1rem;
+      margin-top: 0.25rem;
+    }
+    nav {
+      background-color: #0077cc;
+      padding: 0.5rem;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hero {
+      background-image: url('https://via.placeholder.com/1200x400?text=Event+Rentals+Made+Easy');
+      background-size: cover;
+      background-position: center;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+      font-size: 2rem;
+      text-align: center;
+      padding: 0 1rem;
+    }
+    .content {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .cta {
+      background-color: #0077cc;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 1.25rem;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+    .item-input {
+      display: none;
+      margin-top: 0.5rem;
+    }
+  </style>
+  <script>
+    function toggleInput(id) {
+      const input = document.getElementById(id);
+      input.style.display = input.style.display === 'block' ? 'none' : 'block';
+    }
+    function handleSubmit(e) {
+      e.preventDefault();
+      const tentCheckbox = document.getElementById('tent');
+      if (tentCheckbox.checked) {
+        alert('One more thing — please complete your tent setup form.');
+        window.open('https://www.jotform.com/app/241664855270158', '_blank');
+      } else {
+        alert('Thank you! Your request has been submitted.');
+      }
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <img src="logo.jpeg" alt="West Michigan Events Logo" />
+    <h1>West Michigan Events</h1>
+    <p class="slogan">Handling Big Days in Big Ways!</p>
+  </header>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#booking">Book Now</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="hero">
+    <div>
+      <h2>Plan Your Perfect Event With Us</h2>
+      <p>Graduations, Weddings, Backyard Celebrations & More</p>
+    </div>
+  </div>
+  <div class="content">
+    <section id="services">
+      <h2>Our Services</h2>
+      <p>We provide frame tents, tables, chairs, lighting, decor, food service supplies, and full-service packages for all kinds of events.</p>
+    </section>
+
+    <section id="pricing">
+      <h2>Rentals & Pricing</h2>
+      <div style="line-height: 1.8;">
+        <h3>Tents</h3>
+        <ul>
+          <li>10'x10' Tent (includes side walls): $50</li>
+          <li>20'x20' Tent: $350</li>
+          <li>16'x32' Tent: $450</li>
+          <li>20'x40' Tent: $750</li>
+          <li>Side Walls (add-on): $50</li>
+        </ul>
+        <h3>Tables</h3>
+        <ul>
+          <li>6ft Rectangular Table: $9</li>
+          <li>5ft Round Table: $12</li>
+          <li>32in Cocktail Table: $12</li>
+          <li>Tablecloths (White):
+            <ul>
+              <li>120" Round: $15</li>
+              <li>90"x132" Rectangle: $15</li>
+              <li>Spandex (Cocktail): $10</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Chairs</h3>
+        <ul>
+          <li>White Folding Chair: $2</li>
+        </ul>
+        <h3>Add-Ons</h3>
+        <ul>
+          <li>7-foot Backdrop: $50</li>
+          <li>Decorations: $50</li>
+          <li>Food Service Supplies: $50</li>
+          <li>Ice Table: $50</li>
+        </ul>
+        <h3>Packages</h3>
+        <ul>
+          <li>20'x20' Tent + 6 Tables + 36 Chairs: $450</li>
+          <li>16'x32' Tent + 8 Tables + 48 Chairs: $585</li>
+          <li>20'x40' Tent + 14 Tables + 84 Chairs: $990</li>
+        </ul>
+        <h3>Delivery</h3>
+        <ul>
+          <li>$50 within 25 miles of Alto, MI</li>
+          <li>$1.50 per mile beyond 25 miles</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="cta">
+      <p>Ready to book your event? <strong><a href="#booking" style="color: white; text-decoration: underline;">Click here to get started!</a></strong></p>
+    </div>
+
+    <section id="gallery">
+      <h2>Event Gallery</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
+        <img src="https://via.placeholder.com/300x200?text=Tent+Setup" alt="Tent Setup" style="max-width: 300px; height: auto; border: 1px solid #ccc;">
+        <img src="https://via.placeholder.com/300x200?text=Table+Layout" alt="Table Layout" style="max-width: 300px; height: auto; border: 1px solid #ccc;">
+        <img src="https://via.placeholder.com/300x200?text=Graduation+Party" alt="Graduation Party" style="max-width: 300px; height: auto; border: 1px solid #ccc;">
+        <img src="https://via.placeholder.com/300x200?text=Wedding+Setup" alt="Wedding Setup" style="max-width: 300px; height: auto; border: 1px solid #ccc;">
+      </div>
+    </section>
