@@ -88,6 +88,20 @@
       font-family: 'Prata', serif;
       font-size: 2.25rem;
     }
+      .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      justify-items: center;
+    }
+
+    .gallery-container img {
+      width: 100%;
+      height: auto;
+      border: 1px solid #ccc;
+      object-fit: cover;
+      border-radius: 6px;
+    }
   </style>
   <script>
     function toggleInput(id) {
@@ -180,15 +194,15 @@
       <p>Ready to book your event? <strong><a href="#booking" style="color: white; text-decoration: underline;">Click here to get started!</a></strong></p>
     </div>
     <section id="gallery">
-      <h2>Event Gallery</h2>
-      <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
-        <img src="16x32package1" style="max-width: 600px; height: auto; border: 1px solid #ccc;">
-        <img src="IMG_1736.jpeg" style="max-width: 600px; height: auto; border: 1px solid #ccc;">
-        <img src="IMG_1851.jpeg" style="max-width: 600px; height: auto; border: 1px solid #ccc;">
-        <img src="16x32tent1" style="max-width: 600px; height: auto; border: 1px solid #ccc;">
-        <img src="IMG_7814.jpeg" style="max-width: 600px; height: auto; border: 1px solid #ccc;">
-      </div>
-    </section>
+  <h2>Event Gallery</h2>
+  <div class="gallery-container">
+    <img src="16x32package1" alt="Tent Setup 1" style="max-width: 300px; height: auto; border: 1px solid #ccc;">
+    <img src="16x32tent1" alt="Decorated Table Layout" style="max-width: 300px; height: auto; border: 1px solid #ccc;">
+    <img src="IMG_1736.jpeg" alt="Blue Tablecloth Event" style="max-width: 300px; height: auto; border: 1px solid #ccc;">
+    <img src="IMG_1851.jpeg" alt="Cornfield Tent Setup" style="max-width: 300px; height: auto; border: 1px solid #ccc;">
+    <img src="IMG_7814.jpeg" alt="Graduation Tent Party" style="max-width: 300px; height: auto; border: 1px solid #ccc;">
+  </div>
+</section>
     <section id="booking">
       <h2>Book Your Event</h2>
       <form action="https://formspree.io/f/mgvardek" method="POST" style="display: flex; flex-direction: column; gap: 1rem; max-width: 600px; margin: 2rem auto;" onsubmit="handleSubmit(event)">
