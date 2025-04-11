@@ -4,10 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>West Michigan Events</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Prata&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Playfair Display', serif;
       background-color: #f8f9fa;
       color: #333;
     }
@@ -16,6 +17,7 @@
       color: white;
       padding: 1rem;
       text-align: center;
+      font-family: 'Prata', serif;
     }
     header img {
       max-width: 150px;
@@ -25,6 +27,7 @@
       font-style: italic;
       font-size: 1.1rem;
       margin-top: 0.25rem;
+      font-family: 'Playfair Display', serif;
     }
     nav {
       background-color: #0077cc;
@@ -36,6 +39,7 @@
       margin: 0 1rem;
       text-decoration: none;
       font-weight: bold;
+      font-family: 'Playfair Display', serif;
     }
     .hero {
       background-image: url('https://via.placeholder.com/1200x400?text=Event+Rentals+Made+Easy');
@@ -50,11 +54,13 @@
       font-size: 2rem;
       text-align: center;
       padding: 0 1rem;
+      font-family: 'Prata', serif;
     }
     .content {
       padding: 2rem;
       max-width: 1000px;
       margin: auto;
+      font-family: 'Playfair Display', serif;
     }
     .cta {
       background-color: #0077cc;
@@ -63,6 +69,7 @@
       text-align: center;
       margin-top: 2rem;
       font-size: 1.25rem;
+      font-family: 'Playfair Display', serif;
     }
     footer {
       background-color: #333;
@@ -70,10 +77,16 @@
       text-align: center;
       padding: 1rem;
       margin-top: 2rem;
+      font-family: 'Playfair Display', serif;
     }
     .item-input {
       display: none;
       margin-top: 0.5rem;
+    }
+    section h2 {
+      text-align: center;
+      font-family: 'Prata', serif;
+      font-size: 2.25rem;
     }
   </style>
   <script>
@@ -82,13 +95,12 @@
       input.style.display = input.style.display === 'block' ? 'none' : 'block';
     }
     function handleSubmit(e) {
-      e.preventDefault();
       const tentCheckbox = document.getElementById('tent');
       if (tentCheckbox.checked) {
-        alert('One more thing — please complete your tent setup form.');
-        window.open('https://www.jotform.com/app/241664855270158', '_blank');
-      } else {
-        alert('Thank you! Your request has been submitted.');
+        setTimeout(() => {
+          alert('One more thing — please complete your tent setup form.');
+          window.open('https://www.jotform.com/app/241664855270158', '_blank');
+        }, 500);
       }
     }
   </script>
@@ -101,7 +113,9 @@
   </header>
   <nav>
     <a href="#booking">Book Now</a>
-    <a href="#contact">Contact</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">About</a>
+    <a href="#contact">Contact Us</a>
   </nav>
   <div class="hero">
     <div>
@@ -114,7 +128,6 @@
       <h2>Our Services</h2>
       <p>We provide frame tents, tables, chairs, lighting, decor, food service supplies, and full-service packages for all kinds of events.</p>
     </section>
-
     <section id="pricing">
       <h2>Rentals & Pricing</h2>
       <div style="line-height: 1.8;">
@@ -163,11 +176,9 @@
         </ul>
       </div>
     </section>
-
     <div class="cta">
       <p>Ready to book your event? <strong><a href="#booking" style="color: white; text-decoration: underline;">Click here to get started!</a></strong></p>
     </div>
-
     <section id="gallery">
       <h2>Event Gallery</h2>
       <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
@@ -177,7 +188,6 @@
         <img src="https://via.placeholder.com/300x200?text=Wedding+Setup" alt="Wedding Setup" style="max-width: 300px; height: auto; border: 1px solid #ccc;">
       </div>
     </section>
-
     <section id="booking">
       <h2>Book Your Event</h2>
       <form action="https://formspree.io/f/mgvardek" method="POST" style="display: flex; flex-direction: column; gap: 1rem; max-width: 600px; margin: 2rem auto;" onsubmit="handleSubmit(event)">
@@ -188,7 +198,6 @@
           <label><input type="checkbox" name="tent_16x32"> 16'x32'</label>
           <label><input type="checkbox" name="tent_20x40"> 20'x40'</label>
         </div>
-
         <label><input type="checkbox" onclick="toggleInput('tableOptions')"> Tables</label>
         <div id="tableOptions" class="item-input">
           <label><input type="checkbox" onclick="toggleInput('qty6ft')"> 6ft Rectangular</label>
@@ -198,16 +207,12 @@
           <label><input type="checkbox" onclick="toggleInput('qtyCocktail')"> 32in Standing Cocktail</label>
           <input id="qtyCocktail" class="item-input" type="text" name="qtyCocktail" placeholder="Quantity">
         </div>
-
         <label><input type="checkbox" onclick="toggleInput('chairsQty')"> Chairs</label>
         <input id="chairsQty" class="item-input" type="text" name="chairsQty" placeholder="How many chairs?">
-
         <label><input type="checkbox" onclick="toggleInput('decorQty')"> Decorations</label>
         <input id="decorQty" class="item-input" type="text" name="decorQty" placeholder="Details about decor">
-
         <label><input type="checkbox" onclick="toggleInput('foodQty')"> Food Service Supplies</label>
         <input id="foodQty" class="item-input" type="text" name="foodQty" placeholder="How many sets?">
-
         <label>Your Name:<br><input type="text" name="name" required style="width: 100%; padding: 0.5rem;"></label>
         <label>Email:<br><input type="email" name="email" required style="width: 100%; padding: 0.5rem;"></label>
         <label>Phone Number:<br><input type="tel" name="phone" required style="width: 100%; padding: 0.5rem;"></label>
@@ -216,7 +221,6 @@
         <button type="submit" style="background-color: #0077cc; color: white; padding: 0.75rem; border: none; cursor: pointer;">Submit Booking Request</button>
       </form>
     </section>
-
     <section id="contact">
       <h2>About & Contact</h2>
       <p style="max-width: 700px; margin: auto; line-height: 1.6;">
@@ -228,3 +232,7 @@
         <p><strong>✉️ Email:</strong> (wmerentals@gmail.com)</p>
         <p><strong>📱 Facebook:</strong> <a href="https://www.facebook.com/westmievents" target="_blank">facebook.com/westmievents</a></p>
       </div>
+    </section>
+  </div>
+</body>
+</html>
