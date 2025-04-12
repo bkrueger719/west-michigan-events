@@ -118,7 +118,7 @@
   ];
   let packageSelected = packageInputs.some(input => input && input.checked);
 
-  if (tentCheckbox.checked || packageSelected) {
+  if (tentCheckbox.checked || packageCheckbox.checked) {
     setTimeout(() => {
       alert('One more thing — please complete your tent setup form.');
       window.open('https://www.jotform.com/app/241664855270158', '_blank');
@@ -244,7 +244,7 @@
     <input id="decorQty" class="item-input" type="text" name="decorQty" placeholder="Details about decor">
     <label><input type="checkbox" onclick="toggleInput('foodQty')"> Food Service Supplies</label>
 <input id="foodQty" class="item-input" type="text" name="foodQty" placeholder="How many sets?">
-<label><input type="checkbox" onclick="toggleInput('packageOptions')"> Packages</label>
+<label><input type="checkbox" id="package" onclick="toggleInput('packageOptions')"> Packages</label>
 <div id="packageOptions" class="item-input" style="display: none; flex-direction: column; gap: 0.5rem;">
   <label><input type="checkbox" name="package_20x20"> 20'x20' Tent + 6 Tables + 36 Chairs ($450)</label>
   <label><input type="checkbox" name="package_16x32"> 16'x32' Tent + 8 Tables + 48 Chairs ($585)</label>
