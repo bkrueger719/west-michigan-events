@@ -110,36 +110,19 @@
       input.style.display = input.style.display === 'block' ? 'none' : 'block';
     }
     function handleSubmit(e) {
-  const tentCheckbox = document.getElementById('tent');
-  if (tentCheckbox.checked) {
-    setTimeout(() => {
-      alert('One more thing — please complete your tent setup form.');
-      window.open('https://www.jotform.com/app/241664855270158', '_blank');
-    }, 500);
-  }
-  setTimeout(() => {
-    alert('Thank you for reaching out. Our team will get back to you with a quote in 24–48 hours.');
-  }, 1000);
-}, 500);
-  }
-
-  // Always show this confirmation
-  setTimeout(() => {
-    alert('Thank you for reaching out. Our team will get back to you with a quote in 24–48 hours.');
-  }, 1500); // delay slightly to avoid overlapping with tent popup
-} , 500);
-  }
-  setTimeout(() => {
-    alert('Thank you for reaching out. Our team will get back to you with a quote in 24–48 hours.');
-  }, 1000);
-}, 500);
+      const tentCheckbox = document.getElementById('tent');
+      if (tentCheckbox.checked) {
+        setTimeout(() => {
+          alert('One more thing — please complete your tent setup form.');
+          window.open('https://www.jotform.com/app/241664855270158', '_blank');
+        }, 500);
       }
     }
   </script>
 </head>
 <body>
   <header>
-    <img src="wmelogo">
+    <img src="wmelogotransparent.jpg">
     <p class="slogan">Handling Big Days in Big Ways!</p>
   </header>
   <nav>
@@ -204,7 +187,6 @@
         <ul>
           <li>$50 within 25 miles of Alto, MI</li>
           <li>$1.50 per mile beyond 25 miles</li>
-          <p><em>*Delivery is included with package prices</em></p>
         </ul>
       </div>
     </section>
@@ -214,11 +196,11 @@
     <section id="gallery">
   <h2>Event Gallery</h2>
   <div class="gallery-container">
-    <img src="/mnt/data/IMG_1736.jpeg" alt="Tent Setup 1" style="max-width: 300px; height: auto; border: 1px solid #ccc;">
-    <img src="/mnt/data/IMG_7814.jpeg" alt="Decorated Table Layout" style="max-width: 300px; height: auto; border: 1px solid #ccc;">
-    <img src="/mnt/data/IMG_1851.jpeg" alt="Blue Tablecloth Event" style="max-width: 300px; height: auto; border: 1px solid #ccc;">
-    <img src="/mnt/data/IMG_2071.jpeg" alt="Cornfield Tent Setup" style="max-width: 300px; height: auto; border: 1px solid #ccc;">
-    <img src="/mnt/data/IMG_7745.jpeg" alt="Graduation Tent Party" style="max-width: 300px; height: auto; border: 1px solid #ccc;">
+    <img src="16x32package1" alt="Tent Setup 1" style="max-width: 300px; height: auto; border: 1px solid #ccc;">
+    <img src="16x32tent1" alt="Decorated Table Layout" style="max-width: 300px; height: auto; border: 1px solid #ccc;">
+    <img src="IMG_1736.jpeg" alt="Blue Tablecloth Event" style="max-width: 300px; height: auto; border: 1px solid #ccc;">
+    <img src="IMG_1851.jpeg" alt="Cornfield Tent Setup" style="max-width: 300px; height: auto; border: 1px solid #ccc;">
+    <img src="IMG_7814.jpeg" alt="Graduation Tent Party" style="max-width: 300px; height: auto; border: 1px solid #ccc;">
   </div>
 </section>
     <section id="booking">
@@ -246,18 +228,12 @@
         <input id="decorQty" class="item-input" type="text" name="decorQty" placeholder="Details about decor">
         <label><input type="checkbox" onclick="toggleInput('foodQty')"> Food Service Supplies</label>
         <input id="foodQty" class="item-input" type="text" name="foodQty" placeholder="How many sets?">
-        <label><input type="checkbox" onclick="toggleInput('packageOptions')"> Packages</label>
-<div id="packageOptions" class="item-input">
-  <label><input type="checkbox" name="package_20x20"> 20'x20' Tent + 6 Tables + 36 Chairs ($450)</label>
-  <label><input type="checkbox" name="package_16x32"> 16'x32' Tent + 8 Tables + 48 Chairs ($585)</label>
-  <label><input type="checkbox" name="package_20x40"> 20'x40' Tent + 14 Tables + 84 Chairs ($990)</label>
-</div>
-
-<label>Your Name:<br><input type="text" name="name" required style="width: 100%; padding: 0.5rem;"></label>
+        <label>Your Name:<br><input type="text" name="name" required style="width: 100%; padding: 0.5rem;"></label>
         <label>Email:<br><input type="email" name="email" required style="width: 100%; padding: 0.5rem;"></label>
         <label>Phone Number:<br><input type="tel" name="phone" required style="width: 100%; padding: 0.5rem;"></label>
         <label>Event Date:<br><input type="date" name="date" required style="width: 100%; padding: 0.5rem;"></label>
         <label>Event Location:<br><input type="text" name="location" required style="width: 100%; padding: 0.5rem;"></label>
+        <label>Additional Comments:<br><input type="text" name="comments" required style="width: 100%; padding: 0.5rem;"></label>
         <button type="submit" style="background-color: #0077cc; color: white; padding: 0.75rem; border: none; cursor: pointer;">Submit Booking Request</button>
       </form>
     </section>
