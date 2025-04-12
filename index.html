@@ -116,6 +116,21 @@
           alert('One more thing — please complete your tent setup form.');
           window.open('https://www.jotform.com/app/241664855270158', '_blank');
         }, 500);
+         setTimeout(() => {
+    alert('Thank you for reaching out. Our team will get back to you with a quote in 24–48 hours.');
+  }, 1000);
+}, 500);
+  }
+  // Always show this confirmation
+  setTimeout(() => {
+    alert('Thank you for reaching out. Our team will get back to you with a quote in 24–48 hours.');
+  }, 1500); // delay slightly to avoid overlapping with tent popup
+} , 500);
+  }
+  setTimeout(() => {
+    alert('Thank you for reaching out. Our team will get back to you with a quote in 24–48 hours.');
+  }, 1000);
+}, 500);
       }
     }
   </script>
@@ -187,6 +202,7 @@
         <ul>
           <li>$50 within 25 miles of Alto, MI</li>
           <li>$1.50 per mile beyond 25 miles</li>
+          <p><em>*Delivery is included with all Package Prices</em></p>
         </ul>
       </div>
     </section>
@@ -228,6 +244,11 @@
         <input id="decorQty" class="item-input" type="text" name="decorQty" placeholder="Details about decor">
         <label><input type="checkbox" onclick="toggleInput('foodQty')"> Food Service Supplies</label>
         <input id="foodQty" class="item-input" type="text" name="foodQty" placeholder="How many sets?">
+        <label><input type="checkbox" onclick="toggleInput('packageOptions')"> Packages</label>
+        <label><input type="checkbox" name="package_20x20"> 20'x20' Tent + 6 Tables + 36 Chairs ($450)</label>
+        <label><input type="checkbox" name="package_16x32"> 16'x32' Tent + 8 Tables + 48 Chairs ($585)</label>
+        <label><input type="checkbox" name="package_20x40"> 20'x40' Tent + 14 Tables + 84 Chairs ($990)</label>
+        </div>
         <label>Your Name:<br><input type="text" name="name" required style="width: 100%; padding: 0.5rem;"></label>
         <label>Email:<br><input type="email" name="email" required style="width: 100%; padding: 0.5rem;"></label>
         <label>Phone Number:<br><input type="tel" name="phone" required style="width: 100%; padding: 0.5rem;"></label>
