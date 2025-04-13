@@ -105,35 +105,40 @@
     }
   </style>
   <script>
-    function toggleInput(id) {
-      const input = document.getElementById(id);
-      input.style.display = input.style.display === 'block' ? 'none' : 'block';
-    }
-    function handleSubmit(e) {
-  const tentCheckbox = document.getElementById('tent');
-  const packageInputs = [
-    document.querySelector('input[name="package_20x20"]'),
-    document.querySelector('input[name="package_16x32"]'),
-    document.querySelector('input[name="package_20x40"]')
-  ];
-  let packageSelected = packageInputs.some(input => input && input.checked);
-
-  if (tentCheckbox.checked || packageCheckbox.checked) {
-    setTimeout(() => {
-      alert('One more thing — please complete your tent setup form.');
-      window.open('https://www.jotform.com/app/241664855270158', '_blank');
-    }, 500);
-  }
-
-  setTimeout(() => {
-    alert('Thank you! We’ve received your request and will get back to you within 24–48 hours.');
-  }, 1000);
-}, 500);
-  }
-}, 500);
+  function toggleInput(id) {
+    const input = document.getElementById(id);
+    if (input) {
+      if (input.style.display === 'none' || input.style.display === '') {
+        input.style.display = 'flex';
+        input.style.flexDirection = 'column';
+        input.style.gap = '0.5rem';
+      } else {
+        input.style.display = 'none';
       }
     }
-  </script>
+  }
+
+  function handleSubmit(e) {
+    const tentCheckbox = document.getElementById('tent');
+    const packageInputs = [
+      document.querySelector('input[name="package_20x20"]'),
+      document.querySelector('input[name="package_16x32"]'),
+      document.querySelector('input[name="package_20x40"]')
+    ];
+    let packageSelected = packageInputs.some(input => input && input.checked);
+
+    if (tentCheckbox.checked || packageSelected) {
+      setTimeout(() => {
+        alert('One more thing — please complete your tent setup form.');
+        window.open('https://www.jotform.com/app/241664855270158', '_blank');
+      }, 500);
+    }
+
+    setTimeout(() => {
+      alert('Thank you! We’ve received your request and will get back to you within 24–48 hours.');
+    }, 1000);
+  }
+</script>
 </head>
 <body>
   <header>
@@ -223,14 +228,14 @@
   <h2>Book Your Event</h2>
   <form action="https://formspree.io/f/mgvardek" method="POST" style="display: flex; flex-direction: column; gap: 1rem; max-width: 600px; margin: 2rem auto;" onsubmit="handleSubmit(event)">
     <label><input type="checkbox" id="tent" onclick="toggleInput('tentOptions')"> Tent</label>
-    <div id="tentOptions" class="item-input" style="display: none; flex-wrap: wrap; gap: 1rem;">
+    <div id="tentOptions" class="item-input" style="display: none; flex-direction: column; gap: 0.5rem;">
       <label><input type="checkbox" name="tent_10x10"> 10'x10'</label>
       <label><input type="checkbox" name="tent_20x20"> 20'x20'</label>
       <label><input type="checkbox" name="tent_16x32"> 16'x32'</label>
       <label><input type="checkbox" name="tent_20x40"> 20'x40'</label>
     </div>
     <label><input type="checkbox" onclick="toggleInput('tableOptions')"> Tables</label>
-    <div id="tableOptions" class="item-input">
+    <div id="tableOptions" class="item-input" style="display: none; flex-direction: column; gap: 0.5rem;">
       <label><input type="checkbox" onclick="toggleInput('qty6ft')"> 6ft Rectangular</label>
       <input id="qty6ft" class="item-input" type="text" name="qty6ft" placeholder="Quantity">
       <label><input type="checkbox" onclick="toggleInput('qty5ftRound')"> 5ft Round</label>
@@ -239,12 +244,12 @@
       <input id="qtyCocktail" class="item-input" type="text" name="qtyCocktail" placeholder="Quantity">
     </div>
     <label><input type="checkbox" onclick="toggleInput('chairsQty')"> Chairs</label>
-    <input id="chairsQty" class="item-input" type="text" name="chairsQty" placeholder="How many chairs?">
+    <div id="chairsQty" class="item-input" style="display: none; flex-direction: column; gap: 0.5rem;"><input type="text" name="chairsQty" placeholder="How many chairs?"></div>
     <label><input type="checkbox" onclick="toggleInput('decorQty')"> Decorations</label>
-    <input id="decorQty" class="item-input" type="text" name="decorQty" placeholder="Details about decor">
+    <div id="decorQty" class="item-input" style="display: none; flex-direction: column; gap: 0.5rem;"><input type="text" name="decorQty" placeholder="Details about decor"></div>
     <label><input type="checkbox" onclick="toggleInput('foodQty')"> Food Service Supplies</label>
-<input id="foodQty" class="item-input" type="text" name="foodQty" placeholder="How many sets?">
-<label><input type="checkbox" id="package" onclick="toggleInput('packageOptions')"> Packages</label>
+<div id="foodQty" class="item-input" style="display: none; flex-direction: column; gap: 0.5rem;"><input type="text" name="foodQty" placeholder="How many sets?"></div>
+<label><input type="checkbox" onclick="toggleInput('packageOptions')"> Packages</label>
 <div id="packageOptions" class="item-input" style="display: none; flex-direction: column; gap: 0.5rem;">
   <label><input type="checkbox" name="package_20x20"> 20'x20' Tent + 6 Tables + 36 Chairs ($450)</label>
   <label><input type="checkbox" name="package_16x32"> 16'x32' Tent + 8 Tables + 48 Chairs ($585)</label>
